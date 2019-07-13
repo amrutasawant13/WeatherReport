@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Weather Report";
+}
+
+
+<br /><br /><br />
+<div class="row">
+    <h3>Select file to generate weather report</h3>
+
+    @using (Html.BeginForm("GenerateWeatherReport", "Weather", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+
+    <div>
+        @Html.TextBox("file", "", new { type = "file" }) <br />
+
+        <input type="submit" value="Generate Weather Report" /><br /><br />
+
+        <span style="color: mediumseagreen"><b>@ViewBag.SuccessMessage</b></span> 
+        <span style="color: red"><b>@ViewBag.ErrorMessage</b></span>
+    </div>
+    }
+
+</div>
