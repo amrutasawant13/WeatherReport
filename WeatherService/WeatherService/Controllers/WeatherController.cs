@@ -88,7 +88,8 @@ namespace WeatherService.Controllers
                 BaseAddress = new Uri("http://api.openweathermap.org")
             };
 
-            HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, string.Format("/data/2.5/weather?id={0}&APPID={1}", city.id, "ef4738f1ce56b1c3ad758a2b1024a2a2"));
+            string appId = "aa69195559bd4f88d79f9aadeb77a8f6";
+            HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, string.Format("/data/2.5/weather?id={0}&APPID={1}", city.id, appId));
             HttpResponseMessage httpResponseMessage = client.SendAsync(request).Result;
             string output = httpResponseMessage.Content.ReadAsStringAsync().Result;
 

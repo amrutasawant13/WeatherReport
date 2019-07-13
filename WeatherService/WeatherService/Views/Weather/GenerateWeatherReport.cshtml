@@ -5,7 +5,7 @@
 
 <br /><br /><br />
 <div class="row">
-    <h3>Select file to generate weather report</h3>
+    <span style=" font-size: 18px">Select file to generate weather report</span><span>(only .csv files are allowed)</span><br /><br />
 
     @using (Html.BeginForm("GenerateWeatherReport", "Weather", FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
